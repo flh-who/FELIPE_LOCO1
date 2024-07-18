@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Especifica el tipo de documento y la versión de HTML -->
+    <meta charset="UTF-8">
+    <!-- Configura el viewport para que el sitio sea responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+    <title>FELIPE'S PORTFOLIO</title>
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sección de encabezado del sitio -->
+    <header>
+        <h1>Welcome to my Portfolio</h1>
+        <h2>ENJOY IT</h2>
+        <p> I`m a try of Digital Designer </p>
+    </header>
+    <!-- Barra de navegación con enlaces -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About me</a></li>
+            <li>
+                <a href="contact.html">Contact</a>
+                <ul>
+                    <li><a href="https://www.instagram.com/flh.who/?igsh=MTdnbGdvM2M5ejU0Nw%3D%3D">Instagram</a></li>
+                    <li><a href="phone.html">Phone</a></li>
+                    <li><a href="Gmail.html">Gmail</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- Contenido principal de la página -->
+    <main>
+        <img src="https://www.elevencomunicacion.com/wp-content/uploads/2019/06/fotografia-profesional-1200px.jpg" alt="mi imagen de perfil" wildth="300" height="500">
+        <section>
+            <h2>Acerca de este sitio</h2>
+            <p>Este es un sitio web de ejemplo para aprender HTML y CSS.</p>
+        </section>
+        <div class="slider-container">
+        <div class="slider-content">
+            <div class="slider-item">
+                <img src="https://i.pinimg.com/564x/81/41/c9/8141c9067b6a0938ea40f9327c0db04a.jpg" alt="Imagen 1">
+            </div>
+            <div class="slider-item">
+                <img src="https://i.pinimg.com/564x/1f/79/eb/1f79ebcd19b2deee6a9c88ba31877d56.jpg" alt="Imagen 2">
+            </div>
+            <div class="slider-item">
+                <img src="https://i.pinimg.com/564x/1f/79/eb/1f79ebcd19b2deee6a9c88ba31877d56.jpg" alt="Imagen 3">
+            </div>
+            <div class="slider-item">
+                <img src="https://i.pinimg.com/564x/81/41/c9/8141c9067b6a0938ea40f9327c0db04a.jpg" alt="Imagen 3">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        function showSlides() {
+            const slides = document.querySelectorAll(".slider-item");
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            slides.forEach((slide, index) => {
+                slide.style.display = index === slideIndex ? "block" : "none";
+            });
+            setTimeout(() => {
+                slideIndex++;
+                showSlides();
+            }, 3000); // Cambia la imagen cada 2 segundos
+        }
+    </script>
+    </main>
+
+    <h4>YOU CAN FIND ME HERE</h4>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d69343.5189190589!2d-104.5765671638102!3d24.016257876048194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bb833da45df2b%3A0x2392fefbf317535!2sUniversidad%20Tecnol%C3%B3gica%20de%20Durango!5e0!3m2!1ses!2smx!4v1721344836714!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Pie de página del sitio -->
+    <footer>
+        <p>&copy; 2024 My first website</p>
+    </footer>
+</body>
+</html>
