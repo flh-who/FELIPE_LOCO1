@@ -1,168 +1,181 @@
 /* Estilos globales para el cuerpo del documento */
 body {
-    /* Tipo de letra utilizado */
     font-family: Arial, sans-serif;
-    font-
-    /* Elimina los márgenes y el relleno por defecto */
     margin: 0;
     padding: 0;
-    /* Color de fondo del sitio web */
     background-color: #D9D9D9;
     text-align: center;
 }
 
+/* Animaciones de entrada y salida */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in;
+}
+
+.fade-out {
+    animation: fadeOut 2s ease-out;
+}
+
 /* Estilos para el encabezado */
 header {
-    /* Color de fondo del encabezado */
     background-color: #D9D9D9;
-    /* Color del texto en el encabezado */
     color: #000;
-    /* Relleno interno del encabezado */
     padding: 1rem 0;
-    /* Alineación del texto en el centro */
     text-align: center;
 }
 
 /* Estilos para la barra de navegación */
 nav ul {
-    /* Elimina el estilo de lista por defecto */
     list-style: none;
-    /* Elimina el relleno interno */
     padding: 0;
-    /* Alineación del texto en el centro */
     text-align: center;
-    /* Color de fondo de la barra de navegación */
-    background-color: #000;
-    /* Elimina los márgenes */
-    margin: 0;
-}
-
-/* Estilos para los elementos de la lista en la barra de navegación */
-nav ul li {
-    /* Muestra los elementos en línea */
-    display: inline;
-    /* Elimina los márgenes */
-    margin: 0;
-}
-
-/* Estilos para los enlaces en la barra de navegación */
-nav ul li a {
-    /* Color del texto del enlace */
-    color: #fff;
-    /* Relleno interno del enlace */
-    padding: 0.5rem 1rem;
-    /* Elimina el subrayado por defecto */
-    text-decoration: none;
-}
-
-/* Estilos para el contenido principal */
-main {
-    /* Relleno interno del contenido principal */
-    padding: 1rem;
-}
-
-/* Estilos para el pie de página */
-footer {
-    /* Color de fondo del pie de página */
-    background-color: #0000;
-    /* Color del texto en el pie de página */
-    color: #000;
-    /* Alineación del texto en el centro */
-    text-align: center;
-    /* Relleno interno del pie de página */
-    padding: 1rem 0;
-    /* Fija el pie de página en la parte inferior de la página */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-.slider-container {
-            max-width: 500px;
-            max-height: 700px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-        .slider-content {
-            display: flex;
-            transition: transform 1s ease;
-            width: 100%; /* Ajusta el ancho según el número de imágenes */
-        }
-        .slider-item {
-            flex: 0 0 100%; /* Cada imagen ocupa el 100% del contenedor */
-        }
-        .slider-item img {
-            width: 500px; /* Las imágenes se ajustan al ancho del contenedor */
-            height: 700px;
-        }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
-
-        /* Estilos para la barra de navegación */
-nav ul {
-    /* Elimina el estilo de lista por defecto */
-    list-style-type: none;
-    /* Elimina el relleno interno */
-    padding: 0;
-    /* Alineación del texto en el centro */
-    text-align: center;
-    /* Color de fondo de la barra de navegación */
     background-color: #444;
-    /* Elimina los márgenes */
     margin: 0;
 }
 
-/* Estilos para los elementos de la lista en la barra de navegación */
 nav ul li {
-    /* Muestra los elementos en línea */
     display: inline-block;
-    /* Elimina los márgenes */
     margin: 0;
     position: relative;
 }
 
-/* Estilos para los enlaces en la barra de navegación */
-nav ul li a {
+nav ul li a,
+nav ul li .toggle-btn {
     display: block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: white;
-        }
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background: #444;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
 
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+nav ul li .toggle-btn {
+    background: #444;
+}
 
-        nav ul li ul li {
-            display: block;
-        }
-        nav ul li:hover ul {
-            display: block;
-        }
+/* Estilos para los enlaces en la barra de navegación */
+nav ul li a:hover,
+nav ul li .toggle-btn:hover {
+    background: #666;
+}
 
-        h4{font-size:22px}
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li ul li {
+    display: block;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+/* Estilos para el contenido principal */
+main {
+    padding: 1rem;
+}
+
+.slider-container {
+    max-width: 500px;
+    max-height: 700px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-content {
+    display: flex;
+    transition: transform 1s ease;
+    width: 100%;
+}
+
+.slider-item {
+    flex: 0 0 100%;
+}
+
+}
+ .slider-item img {
+    width: 500px; /* Las imágenes se ajustan al ancho del contenedor */
+    height: 700px;
+
+.slider-item img {
+    width: 100%;
+    height: auto;
+}
+/* Estilos para el contenido principal */
+main {
+    padding: 1rem;
+}
+
+.slider-container-2 {
+    max-width: 200px;
+    max-height: 500px;
+    margin-top: 50 auto;
+    margin-bottom: 50 auto;
+    margin-right: 50 auto;
+    margin-left: 50 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-content-2 {
+    display: flex;
+    transition: transform 1s ease;
+    width: 100%;
+}
+
+.slider-item-2 {
+    flex: 0 0 100%;
+}
+
+}
+ .slider-item-2 img {
+    width: 200px; /* Las imágenes se ajustan al ancho del contenedor */
+    height: 500px;
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+ }
+
+        h3{font-size:30px}
